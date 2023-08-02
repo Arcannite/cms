@@ -8,12 +8,13 @@ generator client {
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
+  relationMode = "prisma"
 }
 
 model post {
   id        Int      @id @default(autoincrement())
-  postDate  DateTime
-  title     String   @db.VarChar(255)
-  author    String   @db.VarChar(255)
-  content   String
+  postDate  DateTime? @default(now())
+  title     String?   @db.VarChar(255)
+  author    String?   @db.VarChar(255)
+  content   String?
 }
