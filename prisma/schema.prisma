@@ -16,5 +16,5 @@ model post {
   postDate  DateTime? @default(now())
   title     String?   @db.VarChar(255)
   author    String?   @db.VarChar(255)
-  content   String?
+  content   String?   @db.Text // 64 kb
 }

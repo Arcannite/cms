@@ -1,0 +1,5 @@
+-- AlterTable
+ALTER TABLE `post` MODIFY `postDate` DATETIME(3) NULL DEFAULT CURRENT_TIMESTAMP(3),
+    MODIFY `title` VARCHAR(255) NULL,
+    MODIFY `content` TEXT NULL,
+    MODIFY `author` VARCHAR(255) NULL;

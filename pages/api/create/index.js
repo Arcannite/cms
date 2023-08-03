@@ -3,12 +3,9 @@ const { PrismaClient } = require('@prisma/client')
 const prisma = new PrismaClient()
 
 async function createPost(req, res) {
+    console.log(JSON.parse(req.body))
     const post = await prisma.post.create({
-        data: {
-            title: req.title,
-            author: req.author,
-            content: req.content,
-        }
+        data: JSON.parse(req.body)
      })
 
     if (post.id) {
