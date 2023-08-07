@@ -1,0 +1,11 @@
+planetscale
+
+pscale auth login
+pscale connect <db-name> <branch> --port 3309
+pscale shell <db-name> <branch>
+
+pscale password create <db-name> <branch> password2
+
+
+prisma
+
