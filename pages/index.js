@@ -3,8 +3,7 @@ import { useRouter } from 'next/router'
 
 export const getStaticProps = async () => {
   var res, posts;
-  const isProd = process.env.NODE_ENV === 'production';
-  if (isProd) {
+  if (process.env.NODE_ENV === 'production') {
     res = await fetch('http://cms-arcannite.vercel.app/api/posts')
   }
   else {
@@ -35,6 +34,7 @@ export default function Home({ posts }) {
           </div>
         ))
       }
+      { process.env.NODE_ENV }
     </div>
   )
 }
